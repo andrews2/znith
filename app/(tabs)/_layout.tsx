@@ -30,6 +30,15 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
+        name="news/index"
+        options={{
+          title: "News",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="newspaper" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="index"
         options={{
           title: "Home",
@@ -51,7 +60,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="train"
+        name="train/index"
         options={{
           title: "Train",
           tabBarIcon: ({ color }) => (

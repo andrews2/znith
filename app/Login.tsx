@@ -1,10 +1,9 @@
-import { View, Text } from "@/components/Themed";
+import { View, Text, TextInput } from "@/components/Themed";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Button,
   KeyboardAvoidingView,
   StyleSheet,
-  TextInput,
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
@@ -12,7 +11,7 @@ import {
 } from "react-native";
 
 export const LoginScreen = () => {
-  const [creating, setCreating] = useState(false);
+  const [creating] = useState(false);
   const [loading, setLoading] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +33,9 @@ export const LoginScreen = () => {
     return (
       <View style={styles.container}>
         <ActivityIndicator size={"large"} animating={loading} />
-        <Text style={styles.title}>Login</Text>
+        <View>
+          <Text style={styles.title}>Login</Text>
+        </View>
         <TextInput
           style={styles.item}
           value={userName}
